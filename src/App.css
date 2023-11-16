@@ -1,38 +1,190 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+.navbar {
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(97, 97, 97);
+  position: sticky;
+  top: 0%;
+  z-index: 1;
+}
+.navLinks {
+  list-style: none;
+  display: flex;
+  width: 70%;
+  padding: 0.5rem 0px;
+  justify-content: space-evenly;
+}
+.category-link {
+  color: azure;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+.category-link:hover {
+  background-color: #252525;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.active {
+  background-color: #252525;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.profile {
+  width: 30%;
+  display: flex;
   align-items: center;
+  justify-content: space-around;
+}
+#logout-btn {
+  color: azure;
+  background-color: rgb(97, 97, 97);
+  font-size: 1.5rem;
+  border: none;
+  padding: 1rem;
+}
+.main-content {
+  width: 100%;
+  padding: 0rem 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.card {
+  width: 255px;
+  height: 375px;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  display: inline-block;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 5px 10px 5px 5px rgb(97, 97, 97);
+}
+.card:hover {
+  box-shadow: 5px 10px 5px 8px rgb(56, 56, 56);
+  cursor: pointer;
+}
+.card-image {
+  margin-top: 5px;
+}
+.title-add-btn {
+  width: 255px;
+  margin-top: 5px;
+  height: 115px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(97, 97, 97);
+  border: none;
+  border-radius: 0 0 1rem 1rem;
+}
+.product-name {
+  width: 255px;
+  height: 60px;
+  margin-top: 5px;
+  padding: 0 5px;
+  color: azure;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-weight: 500;
+}
+.CTA-price {
+  width: 245px;
+  height: 35px;
+  padding: 0 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.card-price {
+  color: azure;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.card-CTA {
+  width: 80px;
+  display: flex;
+  justify-content: flex-end;
+}
+.add-item-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  padding: 2px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 15px 0 0 15px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  cursor: pointer;
+}
+.add-item-btn:hover,
+.subtract-item-btn:hover {
+  background-color: #252525;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.subtract-item-btn {
+  width: 30px;
+  font-size: 1.3rem;
+  height: 30px;
+  border: none;
+  padding: 2px;
+  font-weight: 700;
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.items-number {
+  background-color: azure;
+  padding: 2px 0px;
+  color: black;
+  width: 30px;
+  font-size: 1.25rem;
+  height: 30px;
+  border-left: 2px solid rgb(97, 97, 97);
+  border-right: 2px solid rgb(97, 97, 97);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shopping-cart-container {
+  background-color: azure;
+  width: 15%;
+  height: 70%;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.cart-icon {
+  width: 90%;
+}
+.cart-no-items {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  color: rgb(250, 250, 250);
+  background-color: #252525;
+  padding: 2px 5px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 5px;
 }

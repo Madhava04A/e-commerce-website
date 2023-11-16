@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  align-items: flex-start;
+}
+.back-btn {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 1rem;
+  background-color: rgb(83, 82, 82);
+  color: azure;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+#arrow {
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+.back-btn:hover {
+  box-shadow: 2px 2px 2px 2px #252525;
+}
+.productdetails-container {
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-around;
+}
+.product-details-image {
+  width: 30%;
+  max-height: 450px;
+  min-height: auto;
+}
+.product-details {
+  width: 60%;
+  padding: 0 1rem 1.5rem;
+}
+.product-title {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-bottom: #252525 solid 2px;
+  padding-bottom: 0.5rem;
+}
+.ratings {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-bottom: #252525 2px solid;
+  padding-bottom: 0.25rem;
+}
+.reviews-rate {
+  font-weight: 6400;
+  font-size: 1.3rem;
+}
+.reviews-count {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.product-description {
+  padding-top: 1rem;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-wrap: wrap;
+}
+.price-CTA-container {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.price {
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 550;
+}
+.product-page-btn {
+  font-size: 1.75;
+  font-weight: 700;
+  padding: 0.65rem 0.8rem;
+  background-color: rgb(65, 52, 52);
+  border: none;
+  border-radius: 10px;
+  color: antiquewhite;
+  box-shadow: grey 3px 3px 3px 3px;
+}
+.product-page-btn:hover {
+  box-shadow: rgb(66, 66, 66) 5px 1px 3px 3px;
+  cursor: pointer;
+}
