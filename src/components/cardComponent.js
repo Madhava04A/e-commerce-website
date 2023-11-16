@@ -52,7 +52,7 @@ const CardComponent = ({ product, cart, setCart }) => {
       className="card"
       key={product.id}>
       <Link
-        to={`/${product.category}/${product.id}`}
+        to={`/e-commerce-website/${product.category}/${product.id}`}
         style={{ textDecoration: "none" }}>
         <img
           src={product.image}
@@ -64,7 +64,7 @@ const CardComponent = ({ product, cart, setCart }) => {
 
       <div className="title-add-btn">
         <Link
-          to={`/${product.category}/${product.id}`}
+          to={`/e-commerce-website/${product.category}/${product.id}`}
           style={{ textDecoration: "none", padding: "0px" }}>
           <p className="product-name">
             {product.title.length > 25

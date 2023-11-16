@@ -37,7 +37,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route
-              path="/"
+              path="/e-commerce-website/"
               element={
                 <Home
                   products={items}
@@ -48,7 +48,7 @@ function App() {
               }
             />
             <Route
-              path="men-clothing"
+              path="/e-commerce-website/men-clothing"
               element={
                 <MenCategory
                   loading={isLoading}
@@ -59,7 +59,7 @@ function App() {
               }
             />
             <Route
-              path="women-clothing"
+              path="/e-commerce-website/women-clothing"
               element={
                 <WomenCategory
                   loading={isLoading}
@@ -70,7 +70,7 @@ function App() {
               }
             />
             <Route
-              path="electronics"
+              path="/e-commerce-website/electronics"
               element={
                 <Electronics
                   loading={isLoading}
@@ -81,7 +81,7 @@ function App() {
               }
             />
             <Route
-              path="jewellery"
+              path="/e-commerce-website/jewellery"
               element={
                 <Jewellery
                   loading={isLoading}
@@ -92,7 +92,7 @@ function App() {
               }
             />
             <Route
-              path="/:category/:prodId"
+              path="/e-commerce-website/:category/:prodId"
               element={
                 <ProductDetails
                   loading={isLoading}
@@ -103,7 +103,7 @@ function App() {
               }
             />
             <Route
-              path="cart"
+              path="/e-commerce-website/cart"
               element={
                 <Cart
                   loading={isLoading}

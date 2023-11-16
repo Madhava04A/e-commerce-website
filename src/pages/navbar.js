@@ -8,33 +8,33 @@ const Navbar = ({ totalItems }) => {
       <div className="navLinks">
         <NavLink
           className="category-link"
-          to="/">
+          to="/e-commerce-website/">
           HOME
         </NavLink>
 
         <NavLink
           className="category-link"
-          to="men-clothing">
+          to="/e-commerce-website/men-clothing">
           MEN'S
         </NavLink>
         <NavLink
           className="category-link"
-          to="women-clothing">
+          to="/e-commerce-website/women-clothing">
           WOMEN'S
         </NavLink>
         <NavLink
           className="category-link"
-          to="electronics">
+          to="/e-commerce-website/electronics">
           ELECTRONICS
         </NavLink>
         <NavLink
           className="category-link"
-          to="jewellery">
+          to="/e-commerce-website/jewellery">
           JEWELLERY
         </NavLink>
       </div>
       <div className="profile">
-        <Link to="cart">
+        <Link to="/e-commerce-website/cart">
           <div className="shopping-cart-container">
             <div className="shooping-cart">
               <svg
