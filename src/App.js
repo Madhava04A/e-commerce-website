@@ -9,6 +9,7 @@ import Electronics from "./pages/electronics";
 import Jewellery from "./pages/jewellery";
 import ProductDetails from "./pages/productDetails";
 import Cart from "./pages/cart";
+import Profile from "./pages/profile";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -106,6 +107,16 @@ function App() {
               path="/e-commerce-website/cart"
               element={
                 <Cart
+                  loading={isLoading}
+                  products={items}
+                  cart={cart}
+                />
+              }
+            />
+            <Route
+              path="/e-commerce-website/profile"
+              element={
+                <Profile
                   loading={isLoading}
                   products={items}
                   cart={cart}

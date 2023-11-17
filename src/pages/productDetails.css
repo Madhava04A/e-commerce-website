@@ -102,3 +102,77 @@
   box-shadow: rgb(66, 66, 66) 5px 1px 3px 3px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 800px) {
+  .productdetails-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .product-details-image {
+    width: 95%;
+    height: auto;
+  }
+  .product-details {
+    width: 100%;
+    padding: 0 1rem 1.5rem;
+  }
+  .product-title {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    border-bottom: #252525 solid 2px;
+    padding-bottom: 0.5rem;
+  }
+  .ratings {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.35rem;
+    font-weight: 500;
+    border-bottom: #252525 2px solid;
+    padding-bottom: 0.25rem;
+  }
+  .reviews-rate {
+    font-weight: 6400;
+    font-size: 1.5rem;
+  }
+  .reviews-count {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .product-description {
+    padding-top: 1rem;
+    width: 100%;
+    word-spacing: 3px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-wrap: wrap;
+  }
+  .price-CTA-container {
+    width: 100%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .price {
+    font-size: 1.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 550;
+  }
+  .product-page-btn {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.3rem;
+    background-color: rgb(65, 52, 52);
+    border: none;
+    border-radius: 10px;
+    color: azure;
+    box-shadow: rgb(104, 104, 104) 3px 3px 3px 3px;
+  }
+}
