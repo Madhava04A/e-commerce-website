@@ -1,52 +1,66 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../pages/auth";
+import { useNavigate } from "react-router-dom";
 
 const CardComponent = ({ product, cart, setCart }) => {
+  const navigate = useNavigate();
+  const auth = useAuth();
+
   function addToCart(id, price, title, image) {
-    const newItem = {
-      prodId: id,
-      prodPrice: price,
-      prodTitle: title,
-      prodImage: image,
-      prodQty: 1,
-    };
-    cart.some((item) => {
-      return item.prodId.toString() === id.toString();
-    })
-      ? setCart(
-          cart.map((item) => {
-            if (item.prodId.toString() === id.toString()) {
-              return { ...item, prodQty: item.prodQty + 1 };
-            } else {
-              return item;
-            }
-          })
-        )
-      : setCart([...cart, { ...newItem }]);
-  }
-  function removeFromCart(id) {
-    cart.map((item) => {
-      if (item.prodId.toString() === id.toString()) {
-        if (item.prodQty > 1) {
-          setCart(
+    if (auth.user) {
+      const newItem = {
+        prodId: id,
+        prodPrice: price,
+        prodTitle: title,
+        prodImage: image,
+        prodQty: 1,
+      };
+      cart.some((item) => {
+        return item.prodId.toString() === id.toString();
+      })
+        ? setCart(
             cart.map((item) => {
               if (item.prodId.toString() === id.toString()) {
-                return { ...item, prodQty: item.prodQty - 1 };
+                return { ...item, prodQty: item.prodQty + 1 };
               } else {
                 return item;
               }
             })
-          );
-        } else {
-          setCart(
-            cart.filter((item) => {
-              return Number(item.prodId) !== Number(id);
-            })
-          );
-        }
-      }
-    });
+          )
+        : setCart([...cart, { ...newItem }]);
+    } else {
+      navigate("/e-commerce-website/login");
+    }
   }
+  function removeFromCart(id) {
+    if (auth.user) {
+      cart.map((item) => {
+        if (item.prodId.toString() === id.toString()) {
+          if (item.prodQty > 1) {
+            setCart(
+              cart.map((item) => {
+                if (item.prodId.toString() === id.toString()) {
+                  return { ...item, prodQty: item.prodQty - 1 };
+                } else {
+                  return item;
+                }
+              })
+            );
+          } else {
+            setCart(
+              cart.filter((item) => {
+                return Number(item.prodId) !== Number(id);
+              })
+            );
+          }
+        }
+      });
+    } else {
+      navigate("/e-commerce-website/login");
+    }
+  }
+
   return (
     <div
       className="card"
@@ -76,17 +90,12 @@ const CardComponent = ({ product, cart, setCart }) => {
           <span className="card-price">{product.price}$</span>
           <span className="card-CTA">
             <button
-              onClick={() => {
-                addToCart(
-                  product.id,
-                  product.price,
-                  product.title,
-                  product.image
-                );
+              onClick={(e) => {
+                removeFromCart(product.id);
               }}
-              className="add-item-btn"
+              className="subtract-item-btn"
               type="button">
-              +
+              -
             </button>
             <span className="items-number">
               {cart.some((item) => {
@@ -99,13 +108,19 @@ const CardComponent = ({ product, cart, setCart }) => {
                   })
                 : 0}
             </span>
+
             <button
-              onClick={(e) => {
-                removeFromCart(product.id);
+              onClick={() => {
+                addToCart(
+                  product.id,
+                  product.price,
+                  product.title,
+                  product.image
+                );
               }}
-              className="subtract-item-btn"
+              className="add-item-btn"
               type="button">
-              -
+              +
             </button>
           </span>
         </div>

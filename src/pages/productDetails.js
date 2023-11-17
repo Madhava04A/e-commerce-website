@@ -1,9 +1,11 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { memo } from "react";
+import { useAuth } from "./auth";
 import "./productDetails.css";
 
 const ProductDetails = ({ products, loading, cart, setCart }) => {
+  const auth = useAuth();
   const { category, prodId } = useParams();
   const product = products.find((item) => {
     return (
@@ -11,17 +13,21 @@ const ProductDetails = ({ products, loading, cart, setCart }) => {
     );
   });
   function addToCart(id, price, title, image) {
-    let qty = 1;
-    setCart([
-      ...cart,
-      {
-        prodId: id,
-        prodPrice: price,
-        prodTitle: title,
-        prodImage: image,
-        prodQty: qty,
-      },
-    ]);
+    if (auth.user) {
+      let qty = 1;
+      setCart([
+        ...cart,
+        {
+          prodId: id,
+          prodPrice: price,
+          prodTitle: title,
+          prodImage: image,
+          prodQty: qty,
+        },
+      ]);
+    } else {
+      navigate("/e-commerce-website/login");
+    }
   }
   const navigate = useNavigate();
   return (

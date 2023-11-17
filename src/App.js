@@ -10,6 +10,9 @@ import Jewellery from "./pages/jewellery";
 import ProductDetails from "./pages/productDetails";
 import Cart from "./pages/cart";
 import Profile from "./pages/profile";
+import Auth from "./pages/auth";
+import Login from "./pages/login";
+import { useAuth } from "./pages/auth";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -32,101 +35,106 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Navbar totalItems={totalItems} />
-      {!isLoading && (
-        <main className="main-content">
-          <Routes>
-            <Route
-              path="/e-commerce-website/"
-              element={
-                <Home
-                  products={items}
-                  loading={isLoading}
-                  cart={cart}
-                  setCart={setCart}
-                />
-              }
-            />
-            <Route
-              path="/e-commerce-website/men-clothing"
-              element={
-                <MenCategory
-                  loading={isLoading}
-                  products={items}
-                  cart={cart}
-                  setCart={setCart}
-                />
-              }
-            />
-            <Route
-              path="/e-commerce-website/women-clothing"
-              element={
-                <WomenCategory
-                  loading={isLoading}
-                  products={items}
-                  cart={cart}
-                  setCart={setCart}
-                />
-              }
-            />
-            <Route
-              path="/e-commerce-website/electronics"
-              element={
-                <Electronics
-                  loading={isLoading}
-                  products={items}
-                  cart={cart}
-                  setCart={setCart}
-                />
-              }
-            />
-            <Route
-              path="/e-commerce-website/jewellery"
-              element={
-                <Jewellery
-                  loading={isLoading}
-                  products={items}
-                  cart={cart}
-                  setCart={setCart}
-                />
-              }
-            />
-            <Route
-              path="/e-commerce-website/:category/:prodId"
-              element={
-                <ProductDetails
-                  loading={isLoading}
-                  products={items}
-                  cart={cart}
-                  setCart={setCart}
-                />
-              }
-            />
-            <Route
-              path="/e-commerce-website/cart"
-              element={
-                <Cart
-                  loading={isLoading}
-                  products={items}
-                  cart={cart}
-                />
-              }
-            />
-            <Route
-              path="/e-commerce-website/profile"
-              element={
-                <Profile
-                  loading={isLoading}
-                  products={items}
-                  cart={cart}
-                />
-              }
-            />
-          </Routes>
-        </main>
-      )}
-    </div>
+    <Auth>
+      <div className="App">
+        <Navbar totalItems={totalItems} />
+        {!isLoading && (
+          <main className="main-content">
+            <Routes>
+              <Route
+                path="/e-commerce-website/"
+                element={
+                  <Home
+                    products={items}
+                    loading={isLoading}
+                    cart={cart}
+                    setCart={setCart}
+                  />
+                }
+              />
+              <Route
+                path="/e-commerce-website/men-clothing"
+                element={
+                  <MenCategory
+                    loading={isLoading}
+                    products={items}
+                    cart={cart}
+                    setCart={setCart}
+                  />
+                }
+              />
+              <Route
+                path="/e-commerce-website/women-clothing"
+                element={
+                  <WomenCategory
+                    loading={isLoading}
+                    products={items}
+                    cart={cart}
+                    setCart={setCart}
+                  />
+                }
+              />
+              <Route
+                path="/e-commerce-website/electronics"
+                element={
+                  <Electronics
+                    loading={isLoading}
+                    products={items}
+                    cart={cart}
+                    setCart={setCart}
+                  />
+                }
+              />
+              <Route
+                path="/e-commerce-website/jewellery"
+                element={
+                  <Jewellery
+                    loading={isLoading}
+                    products={items}
+                    cart={cart}
+                    setCart={setCart}
+                  />
+                }
+              />
+              <Route
+                path="/e-commerce-website/:category/:prodId"
+                element={
+                  <ProductDetails
+                    loading={isLoading}
+                    products={items}
+                    cart={cart}
+                    setCart={setCart}
+                  />
+                }
+              />
+              <Route
+                path="/e-commerce-website/cart"
+                element={
+                  <Cart
+                    cart={cart}
+                    useAuth={useAuth}
+                  />
+                }
+              />
+              <Route
+                path="/e-commerce-website/profile"
+                element={
+                  <Profile
+                    loading={isLoading}
+                    products={items}
+                    cart={cart}
+                  />
+                }
+              />
+              <Route
+                path="/e-commerce-website/login"
+                element={<Login />}
+              />
+            </Routes>
+          </main>
+        )}
+      </div>
+    </Auth>
   );
 }
 
